@@ -10,22 +10,22 @@ namespace Push
     {
         static void Main(string[] args)
         {
-            if (args.Length < 2)
+            if (args.Length < 3)
             {
-                Console.WriteLine("Command format:\ndotnet run {Server key} {device FCM token}");
+                Console.WriteLine("Command format:\ndotnet run {Sender id} {Server key} {device FCM token}");
                 return;
             }
 
             WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
             tRequest.Method = "post";
             //serverKey - Key from Firebase cloud messaging server  
-            tRequest.Headers.Add(string.Format("Authorization: key={0}", args[0]));
+            tRequest.Headers.Add(string.Format("Authorization: key={0}", args[1]));
             //Sender Id - From firebase project setting  
-            //  tRequest.Headers.Add(string.Format("Sender: id={0}", "XXXXX.."));
+            tRequest.Headers.Add(string.Format("Sender: id={0}", args[0]));
             tRequest.ContentType = "application/json";
             var payload = new
             {
-                to = args[1],
+                to = args[2],
                 priority = "high",
                 content_available = true,
                 notification = new
