@@ -12,7 +12,8 @@ namespace Push
         {
             if (args.Length < 3)
             {
-                Console.WriteLine("Command format:\ndotnet run {Sender id} {Server key} {device FCM token}");
+                Console.WriteLine("Command format with .dot net sdk:\ndotnet run {Sender id} {Server key} {device FCM token}");
+                Console.WriteLine("Command format:\ndotnet Push.dll {Sender id} {Server key} {device FCM token}");
                 return;
             }
 
