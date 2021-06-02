@@ -1,6 +1,10 @@
 usage:
-dotnet run {Sender id} {Server key} {device FCM token}
 
-ort
+download SDK https://dotnet.microsoft.com/download
 
-dotent Push.dll {Sender id} {Server key} {device FCM token}
+**dotnet run {Sender id} {Server key} {device FCM token}**
+
+or 
+
+**dotnet Push.dll {Sender id} {Server key} {device FCM token}**
+
